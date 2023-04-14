@@ -1,10 +1,90 @@
 /* Modul 4 */
 
+
+/* 65 setTimeout & setInterval */
+
+
+// const timerId = setTimeout(function() {
+//     console.log('hello');
+// }, 2000);
+
+
+
+
+// const timerId = setTimeout(logger, 2000);
+
+// function logger() {
+//     console.log('hello');
+// }
+
+
+
+
+// const timerId = setTimeout(logger, 2000);
+
+// function logger() {
+//     alert('hello');
+// }
+
+// clearInterval(timerId);
+
+
+
+
+// btn.addEventListener('click', () => {
+//     // const timerId = setTimeout(logger, 2000);
+//     timerId = setInterval(logger, 500);
+// });
+
+// function logger() {
+//     if (i === 3) {
+//         clearInterval(timerId);
+//     }
+//     console.log('txt');
+//     i++;
+// }
+
+
+
+
+/* Animation */
+
+
+// const btn = document.querySelector('.btn');
+// let timerId,
+//     i = 0;
+
+// function myAnimation() {
+//     const elem = document.querySelector('.box');
+//     let pos = 0;
+
+//     const id = setInterval(frame, 10);
+//     function frame() {
+//         if (pos == 295) {
+//             clearInterval(id);
+//         } else {
+//             pos++;
+//             elem.style.top = pos + 'px';
+//             elem.style.left = pos + 'px';
+//         }
+//     }
+// }
+
+// btn.addEventListener('click', myAnimation);
+
+
+
+
+
+
+
 window.addEventListener('DOMContentLoaded', () => {
 
+/* 64 Tabs */
+
     const tabs = document.querySelectorAll('.tabheader__item'),
-        tabsContent = document.querySelectorAll('.tabcontent'),
-        tabsParent = document.querySelector('.tabheader__items');
+          tabsContent = document.querySelectorAll('.tabcontent'),
+          tabsParent = document.querySelector('.tabheader__items');
 
     function hideTabContent() {
         tabsContent.forEach(item => {
