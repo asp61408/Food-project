@@ -49,10 +49,54 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
+
+
+
+
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 68 Работа с датами Date */
 
 
 
+// const now = new Date();
+
+// console.log(now);
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDate());
+// console.log(now.getHours());
+// console.log(now.getUTCHours());
+
+
+
+
+
+// let start = new Date();
+// let some;
+
+// for (let i = 0; i < 100000; i++) {
+//     some = i ** 3;
+// }
+
+// let end = new Date();
+
+// console.log(some);
+// console.log(end - start);
 
 
 
@@ -62,6 +106,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 /* 67 WeakMap & WeakSet */
+
+
 
 
 
@@ -88,7 +134,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
 /* Добавление и удаление пользователя в WeakMap */
+
 
 
 // let cache = new WeakMap();
@@ -118,8 +169,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
 // WeakSet
 // add, has, delete
+
+
 
 
 // let messages = [
@@ -146,10 +202,10 @@ window.addEventListener('DOMContentLoaded', () => {
 /* 66 Сборщики мусора и утечки памяти */
 
 
-
-
-
-
+// 
+// 
+// 
+// 
 
 
 /* 65 setTimeout & setInterval */
@@ -223,3 +279,145 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // btn.addEventListener('click', myAnimation);
 
+
+
+
+
+
+
+
+
+
+
+/* Map & Set повторил и не понял  */
+
+
+
+/* 
+
+Перебор Map и Set всегда осуществляется в порядке добавления элементов, 
+так что нельзя сказать, что это – неупорядоченные коллекции, 
+но поменять порядок элементов или получить элемент напрямую по его номеру нельзя.
+
+*/
+
+
+
+
+/* 
+
+new Set(iterable) – создаёт Set, и если в качестве аргумента был предоставлен 
+итерируемый объект (обычно это массив), то копирует его значения в новый Set.
+
+set.add(value) – добавляет значение (если оно уже есть, то ничего не делает), 
+возвращает тот же объект set.
+
+set.delete(value) – удаляет значение, возвращает true, если value было в множестве 
+на момент вызова, иначе false.
+
+set.has(value) – возвращает true, если значение присутствует в множестве, иначе false.
+
+set.clear() – удаляет все имеющиеся значения.
+
+set.size – возвращает количество элементов в множестве.
+
+
+
+Set имеет те же встроенные методы, что и Map:
+
+set.keys() – возвращает перебираемый объект для значений,
+
+set.values() – то же самое, что и set.keys(), присутствует для обратной совместимости с Map,
+
+set.entries() – возвращает перебираемый объект для пар вида [значение, значение], 
+присутствует для обратной совместимости с Map.
+
+*/
+
+
+
+
+
+
+/* 
+
+new Map() – создаёт коллекцию.
+
+map.set(key, value) – записывает по ключу key значение value.
+
+map.get(key) – возвращает значение по ключу или undefined, если ключ key отсутствует.
+
+map.has(key) – возвращает true, если ключ key присутствует в коллекции, иначе false.
+
+map.delete(key) – удаляет элемент (пару «ключ/значение») по ключу key.
+
+map.clear() – очищает коллекцию от всех элементов.
+
+map.size – возвращает текущее количество элементов.
+
+
+
+
+Для перебора коллекции Map есть 3 метода:
+
+
+map.keys() – возвращает итерируемый объект по ключам,
+
+map.values() – возвращает итерируемый объект по значениям,
+
+map.entries() – возвращает итерируемый объект по парам вида [ключ, значение], 
+этот вариант используется по умолчанию в for..of.
+
+*/
+
+
+
+
+
+
+// let map = new Map();
+
+// map.set({name: 'John'}, 'user')
+//     .set({name: 'Alex'}, 'admin')
+//     .set('banana', 'fruit')
+//     .set(1, 2);
+
+// console.log(map.values());
+// console.log(map.keys());
+// console.log(map.entries());
+
+// map.forEach((elem, item) => console.log(item, elem))
+
+// let obj = Object.fromEntries(map.entries());
+
+// console.log(obj);
+
+// let newMap = Object.entries(obj);
+
+// console.log(newMap);
+
+
+
+
+
+/* Почему Object.fromEntries() не записывает  '[object Object]', 'user' ] в obj ???? */
+
+
+/*  ???????????????????
+
+[Map Iterator] { 'user', 'admin', 'fruit', 2 }
+[Map Iterator] { { name: 'John' }, { name: 'Alex' }, 'banana', 1 }
+[Map Entries] {
+  [ { name: 'John' }, 'user' ],
+  [ { name: 'Alex' }, 'admin' ],
+  [ 'banana', 'fruit' ],
+  [ 1, 2 ]
+}
+{ name: 'John' } user
+{ name: 'Alex' } admin
+banana fruit
+1 2
+{ '1': 2, '[object Object]': 'admin', banana: 'fruit' }          ?????????????????????????
+[ [ '1', 2 ], [ '[object Object]', 'admin' ], [ 'banana', 'fruit' ] ]
+
+*/
