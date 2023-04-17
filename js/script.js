@@ -7,7 +7,10 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-/* 64 Tabs */
+
+
+    /* 64 Tabs */
+
 
     const tabs = document.querySelectorAll('.tabheader__item'),
           tabsContent = document.querySelectorAll('.tabcontent'),
@@ -46,16 +49,86 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
+
+
+    /* 69 Timer */
+
+
+
+
+    const deadline = '2023-04-20';
+
+    function getTimeRemaining(endtime) {
+        let days, hours, minutes, seconds;
+        const t = Date.parse(endtime) - Date.parse(new Date());
+
+        if (t <= 0) {
+            days = 0;
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+        } else {
+            days = Math.floor((t / (1000 * 60 * 60 * 24))),
+            hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+            minutes = Math.floor((t / 1000 / 60) % 60),
+            seconds = Math.floor((t / 1000) % 60);
+        }
+
+        return {
+            'total': t,
+            days,
+            hours,
+            minutes,
+            seconds
+        };
+    }
+
+    function getZero(num) {
+        if (num >= 0 && num < 10) {
+            return `0${num}`;
+        } else {
+            return num;
+        }
+    }
+
+    function setClock(selector, endtime) {
+        const timer = document.querySelector(selector),
+              days = timer.querySelector('#days'),
+              hours = timer.querySelector('#hours'),
+              minutes = timer.querySelector('#minutes'),
+              seconds = timer.querySelector('#seconds'),
+              timeInterval = setInterval(updateClock, 1000);
+
+        updateClock();
+
+        function updateClock() {
+            const t = getTimeRemaining(endtime);
+
+            days.innerHTML = getZero(t.days);
+            hours.innerHTML = getZero(t.hours);
+            minutes.innerHTML = getZero(t.minutes);
+            seconds.innerHTML = getZero(t.seconds);
+
+            if (timeInterval <= 0) {
+                clearInterval(timeInterval);
+            }
+        }
+
+    }
+    
+    setClock('.timer', deadline);
+   
+
 });
 
 
 
-
-
-
+console.log(Date.getMonth())
 
 
 /*  */
+
 
 
 
@@ -99,7 +172,50 @@ window.addEventListener('DOMContentLoaded', () => {
 // console.log(end - start);
 
 
+/* 
 
+Получение компонентов даты
+Существуют методы получения года, месяца и т.д. из объекта Date:
+
+getFullYear()
+Получить год (4 цифры)
+getMonth()
+Получить месяц, от 0 до 11.
+getDate()
+Получить день месяца, от 1 до 31, что несколько противоречит названию метода.
+getHours(), getMinutes(), getSeconds(), getMilliseconds()
+Получить, соответственно, часы, минуты, секунды или миллисекунды.
+
+getDay()
+Вернуть день недели от 0 (воскресенье) до 6 (суббота).
+Несмотря на то, что в ряде стран за первый день недели принят понедельник, 
+в JavaScript начало недели приходится на воскресенье.
+Однако существуют и их UTC-варианты, возвращающие день, месяц, год для временной 
+зоны UTC+0: getUTCFullYear(), getUTCMonth(), getUTCDay(). Для их использования 
+требуется после "get" подставить "UTC".
+
+getTime()
+Для заданной даты возвращает таймстамп – количество миллисекунд, 
+прошедших с 1 января 1970 года UTC+0.
+
+getTimezoneOffset()
+Возвращает разницу в минутах между UTC и местным часовым поясом:
+
+Установка компонентов даты
+Следующие методы позволяют установить компоненты даты и времени:
+
+setFullYear(year, [month], [date])
+setMonth(month, [date])
+setDate(date)
+setHours(hour, [min], [sec], [ms])
+setMinutes(min, [sec], [ms])
+setSeconds(sec, [ms])
+setMilliseconds(ms)
+setTime(milliseconds) (устанавливает дату в виде целого количества миллисекунд, 
+прошедших с 01.01.1970 UTC)
+У всех этих методов, кроме setTime(), есть UTC-вариант, например: setUTCHours().
+
+*/
 
 
 
