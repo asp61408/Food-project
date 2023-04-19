@@ -118,9 +118,55 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     
     setClock('.timer', deadline);
+
+
+
+    /* 72 Modal */
    
 
+    const modalTrigger = document.querySelectorAll('[data-modal]'),
+          modalCloseBtn = document.querySelector('[data-close]'),
+          modal = document.querySelector('.modal');
+
+    modalTrigger.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modal.classList.add('show');
+            modal.classList.remove('hide');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeModal() {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', e => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+
+
+
 });
+
+
+
+
+
+
+
+/*  */
 
 
 
@@ -133,30 +179,30 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-const box = document.querySelector('.box'),
-      btn = document.querySelector('button');
+// const box = document.querySelector('.box'),
+//       btn = document.querySelector('button');
 
-// const width = box.offsetWidth;
-// const height = box.offsetHeight;
-const width = box.scrollWidth;
-const height = box.scrollHeight;
-// const width = box.clientWidth;
-// const height = box.clientHeight;
+// // const width = box.offsetWidth;
+// // const height = box.offsetHeight;
+// const width = box.scrollWidth;
+// const height = box.scrollHeight;
+// // const width = box.clientWidth;
+// // const height = box.clientHeight;
 
-console.log(width, height);
+// console.log(width, height);
 
-btn.addEventListener('click', () => {
-    // box.style.height = box.scrollHeight + 'px';
-    console.log(box.scrollTop);
-});
+// btn.addEventListener('click', () => {
+//     // box.style.height = box.scrollHeight + 'px';
+//     console.log(box.scrollTop);
+// });
 
-console.log(box.getBoundingClientRect().top);
+// console.log(box.getBoundingClientRect().top);
 
-const style = window.getComputedStyle(box);
+// const style = window.getComputedStyle(box);
 
-console.log(style.display);
+// console.log(style.display);
 
-console.log(document.documentElement.scrollTop);
+// console.log(document.documentElement.scrollTop);
 
 
 
