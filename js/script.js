@@ -57,8 +57,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    const deadline = '2023-04-20';
-
+    const deadline = '2023-05-20';
+    
     function getTimeRemaining(endtime) {
         let days, hours, minutes, seconds;
         const t = Date.parse(endtime) - Date.parse(new Date());
@@ -173,7 +173,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', showModalByScroll);
 
 
-    
+
 
     /*  */
 

@@ -8,6 +8,47 @@
 
 
 
+
+
+
+
+
+
+
+// function isIsogram(str) {
+// 	str = str.toLowerCase();
+// 	for (let i = 0; i <= str.length; i++) {
+// 		for (let j = i + 1; j <= str.length; j++) {
+// 			if (str[i] == str[j]) {
+// 				return false;
+// 			}
+// 		}
+// 	}
+// 	return true;
+// }
+
+
+
+
+
+/* Codewars */
+
+
+
+// function isIsogram(str){
+// 	return new Set(str.toUpperCase()).size == str.length;
+// }
+
+
+
+// isIsogram('I dont know');
+
+
+
+
+
+
+
 // function getCount(str) {
 // 	const char = 'aeiou';
 // 	let result = 0;
@@ -46,6 +87,10 @@
 // }
 
 // console.log(getCount('sjjdlhhffgaaaa aaaa fdkdii'));
+
+
+
+
 
 
 // function findAverage(array) {
