@@ -13,6 +13,41 @@
 
 
 
+/* Вернуть только с 4 буквами */
+
+
+
+// function friend(friends) {
+// 	//your code here
+// 	let newFriends = [];
+// 	for (let value of friends) {
+// 		if (value.length == 4) {
+// 			newFriends.push(value);
+// 		}
+// 	}
+// 	return newFriends;
+// }
+
+
+
+
+
+
+/* Codewars */
+
+
+// function friend(friends) {
+// 	return friends.filter(value => value.length === 4);
+// }
+
+
+
+// console.log(friend(['ffff', 'fffff', 'ffffff', 'aaaa']));
+
+
+
+
+
 
 
 // function isIsogram(str) {
