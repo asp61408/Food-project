@@ -187,20 +187,65 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+/* 75 Function constructor */
+
+
+
+
+
+// function User(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hello = function() {
+//         console.log(`Hello ${this.name}`);
+//     };
+// }
+
+// User.prototype.exit = function() {
+//     console.log(`Пользователь ${this.name} ушел`);
+// }
+
+// const ivan = new User('Ivan', 28);
+// const alex = new User('Alex', 20);
+
+
+// ivan.hello();
+// alex.hello();
+
+// console.log(ivan);
+// console.log(alex);
+
+// ivan.exit();
+
+
+
+
+
+
+
 /* 74 MutationObserver */
 
 
-const box = document.querySelector('.box');
 
-let observer = new MutationObserver(mutationRecords => {
-    console.log(mutationRecords);
-});
 
-observer.observe(box, {
-    childList: true
-})
+// const box = document.querySelector('.box');
 
-observer.disconnect();
+// let observer = new MutationObserver(mutationRecords => {
+//     console.log(mutationRecords);
+// });
+
+// observer.observe(box, {
+//     childList: true
+// })
+
+// observer.disconnect();
+
+
+
+
+
 
 
 
@@ -241,7 +286,12 @@ observer.disconnect();
 
 
 
+
+
+
 /* 68 Работа с датами Date */
+
+
 
 
 
@@ -315,6 +365,10 @@ setTime(milliseconds) (устанавливает дату в виде цело�
 У всех этих методов, кроме setTime(), есть UTC-вариант, например: setUTCHours().
 
 */
+
+
+
+
 
 
 
