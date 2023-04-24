@@ -13,6 +13,48 @@
 
 
 
+
+/* Отфильтровать положительные числа */
+
+
+
+
+// function filter_list(l) {
+
+
+/* for */
+
+	// let result = [];
+
+	// for (let i = 0; i <= l.length; i++) {
+	// 	if (l[i] >= 0 && Number.isInteger(l[i])) {
+	// 		result.push(l[i]);
+	// 	}
+	// }
+
+	// return result;
+
+
+/* .filter() */
+
+	// let res = l.filter(num => num >= 0 && Number.isInteger(num));
+
+/* .filter() */
+
+	// let res = l.filter(num => num >= 0 && Number.isInteger(num))
+	// return res;
+// }
+
+
+// console.log(filter_list([1,2,'a','b', -1]));
+// console.log(filter_list([1,'a','b',0,15]));
+// console.log(filter_list([1,2,'aasf','1','123',123]));
+
+
+
+
+
+
 /* Вернуть только с 4 буквами */
 
 
