@@ -5,182 +5,307 @@
 
 
 
-window.addEventListener('DOMContentLoaded', () => {
+// window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    /* 64 Tabs */
+//     /* 64 Tabs */
 
 
-    const tabs = document.querySelectorAll('.tabheader__item'),
-          tabsContent = document.querySelectorAll('.tabcontent'),
-          tabsParent = document.querySelector('.tabheader__items');
+//     const tabs = document.querySelectorAll('.tabheader__item'),
+//           tabsContent = document.querySelectorAll('.tabcontent'),
+//           tabsParent = document.querySelector('.tabheader__items');
 
-    function hideTabContent() {
-        tabsContent.forEach(item => {
-            item.classList.add('hide');
-            item.classList.remove('show', 'fade');
-        });
+//     function hideTabContent() {
+//         tabsContent.forEach(item => {
+//             item.classList.add('hide');
+//             item.classList.remove('show', 'fade');
+//         });
 
-        tabs.forEach(item => {
-            item.classList.remove('tabheader__item_active');
-        });
-    }
+//         tabs.forEach(item => {
+//             item.classList.remove('tabheader__item_active');
+//         });
+//     }
 
-    function showTabContent(i = 0) {
-            tabsContent[i].classList.add('show', 'fade');
-            tabsContent[i].classList.remove('hide');
-            tabs[i].classList.add('tabheader__item_active');
-    }
+//     function showTabContent(i = 0) {
+//             tabsContent[i].classList.add('show', 'fade');
+//             tabsContent[i].classList.remove('hide');
+//             tabs[i].classList.add('tabheader__item_active');
+//     }
 
-    hideTabContent();
-    showTabContent();
+//     hideTabContent();
+//     showTabContent();
 
-    tabsParent.addEventListener('click', (event) => {
-        const target = event.target;
+//     tabsParent.addEventListener('click', (event) => {
+//         const target = event.target;
 
-        if (target && target.classList.contains('tabheader__item')) {
-            tabs.forEach((item, i) => {
-                if (target == item) {
-                    hideTabContent();
-                    showTabContent(i);
-                }
-            })
-        }
-    });
-
-
-
-
-    /* 69 Timer */
+//         if (target && target.classList.contains('tabheader__item')) {
+//             tabs.forEach((item, i) => {
+//                 if (target == item) {
+//                     hideTabContent();
+//                     showTabContent(i);
+//                 }
+//             })
+//         }
+//     });
 
 
 
 
-    const deadline = '2023-05-20';
+//     /* 69 Timer */
+
+
+
+
+//     const deadline = '2023-05-20';
     
-    function getTimeRemaining(endtime) {
-        let days, hours, minutes, seconds;
-        const t = Date.parse(endtime) - Date.parse(new Date());
+//     function getTimeRemaining(endtime) {
+//         let days, hours, minutes, seconds;
+//         const t = Date.parse(endtime) - Date.parse(new Date());
 
-        if (t <= 0) {
-            days = 0;
-            hours = 0;
-            minutes = 0;
-            seconds = 0;
-        } else {
-            days = Math.floor((t / (1000 * 60 * 60 * 24))),
-            hours = Math.floor((t / (1000 * 60 * 60)) % 24),
-            minutes = Math.floor((t / 1000 / 60) % 60),
-            seconds = Math.floor((t / 1000) % 60);
-        }
+//         if (t <= 0) {
+//             days = 0;
+//             hours = 0;
+//             minutes = 0;
+//             seconds = 0;
+//         } else {
+//             days = Math.floor((t / (1000 * 60 * 60 * 24))),
+//             hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+//             minutes = Math.floor((t / 1000 / 60) % 60),
+//             seconds = Math.floor((t / 1000) % 60);
+//         }
 
-        return {
-            'total': t,
-            days,
-            hours,
-            minutes,
-            seconds
-        };
-    }
+//         return {
+//             'total': t,
+//             days,
+//             hours,
+//             minutes,
+//             seconds
+//         };
+//     }
 
-    function getZero(num) {
-        if (num >= 0 && num < 10) {
-            return `0${num}`;
-        } else {
-            return num;
-        }
-    }
+//     function getZero(num) {
+//         if (num >= 0 && num < 10) {
+//             return `0${num}`;
+//         } else {
+//             return num;
+//         }
+//     }
 
-    function setClock(selector, endtime) {
-        const timer = document.querySelector(selector),
-              days = timer.querySelector('#days'),
-              hours = timer.querySelector('#hours'),
-              minutes = timer.querySelector('#minutes'),
-              seconds = timer.querySelector('#seconds'),
-              timeInterval = setInterval(updateClock, 1000);
+//     function setClock(selector, endtime) {
+//         const timer = document.querySelector(selector),
+//               days = timer.querySelector('#days'),
+//               hours = timer.querySelector('#hours'),
+//               minutes = timer.querySelector('#minutes'),
+//               seconds = timer.querySelector('#seconds'),
+//               timeInterval = setInterval(updateClock, 1000);
 
-        updateClock();
+//         updateClock();
 
-        function updateClock() {
-            const t = getTimeRemaining(endtime);
+//         function updateClock() {
+//             const t = getTimeRemaining(endtime);
 
-            days.innerHTML = getZero(t.days);
-            hours.innerHTML = getZero(t.hours);
-            minutes.innerHTML = getZero(t.minutes);
-            seconds.innerHTML = getZero(t.seconds);
+//             days.innerHTML = getZero(t.days);
+//             hours.innerHTML = getZero(t.hours);
+//             minutes.innerHTML = getZero(t.minutes);
+//             seconds.innerHTML = getZero(t.seconds);
 
-            if (timeInterval <= 0) {
-                clearInterval(timeInterval);
-            }
-        }
+//             if (timeInterval <= 0) {
+//                 clearInterval(timeInterval);
+//             }
+//         }
 
-    }
+//     }
     
-    setClock('.timer', deadline);
+//     setClock('.timer', deadline);
 
 
 
-    /* 72, 73 Modal */
+//     /* 72, 73 Modal */
    
 
-    const modalTrigger = document.querySelectorAll('[data-modal]'),
-          modalCloseBtn = document.querySelector('[data-close]'),
-          modal = document.querySelector('.modal');
+//     const modalTrigger = document.querySelectorAll('[data-modal]'),
+//           modalCloseBtn = document.querySelector('[data-close]'),
+//           modal = document.querySelector('.modal');
 
-    function openModal() {
-        modal.classList.add('show');
-        modal.classList.remove('hide');
-        document.body.style.overflow = 'hidden';
-        clearInterval(modalTimerID);
-        window.removeEventListener('scroll', showModalByScroll);
-    }
+//     function openModal() {
+//         modal.classList.add('show');
+//         modal.classList.remove('hide');
+//         document.body.style.overflow = 'hidden';
+//         clearInterval(modalTimerID);
+//         window.removeEventListener('scroll', showModalByScroll);
+//     }
 
-    modalTrigger.forEach(btn => {
-        btn.addEventListener('click', openModal);
-    });
-
-
-    function closeModal() {
-        modal.classList.add('hide');
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
-    }
-
-    modalCloseBtn.addEventListener('click', closeModal);
-
-    modal.addEventListener('click', e => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.code === 'Escape' && modal.classList.contains('show')) {
-            closeModal();
-        }
-    });
-
-    const modalTimerID = setTimeout(openModal, 15000);
-
-    function showModalByScroll() {
-        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
-            openModal();
-            // window.removeEventListener('scroll', showModalByScroll);
-        }
-    }
-
-    window.addEventListener('scroll', showModalByScroll);
+//     modalTrigger.forEach(btn => {
+//         btn.addEventListener('click', openModal);
+//     });
 
 
+//     function closeModal() {
+//         modal.classList.add('hide');
+//         modal.classList.remove('show');
+//         document.body.style.overflow = '';
+//     }
 
+//     modalCloseBtn.addEventListener('click', closeModal);
 
-    /*  */
+//     modal.addEventListener('click', e => {
+//         if (e.target === modal) {
+//             closeModal();
+//         }
+//     });
+
+//     document.addEventListener('keydown', (e) => {
+//         if (e.code === 'Escape' && modal.classList.contains('show')) {
+//             closeModal();
+//         }
+//     });
+
+//     const modalTimerID = setTimeout(openModal, 15000);
+
+//     function showModalByScroll() {
+//         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
+//             openModal();
+//             // window.removeEventListener('scroll', showModalByScroll);
+//         }
+//     }
+
+//     window.addEventListener('scroll', showModalByScroll);
 
 
 
-});
 
+//     /*  */
+
+
+
+// });
+
+
+
+
+
+
+/* 76 -- this -- */
+
+
+
+
+/* 
+
+1) Обычная функция: this -- window, 'use strict' -- undefined
+
+2) Контекст у методов объекта -- сам объект
+
+3) this в конструкторах и классах -- новый экземпляр объекта
+
+4) Ручная привязка this: call, apply, bind
+
+*/
+
+// function showThis(a, b) {
+//     // console.log(this);
+//     function sum() {
+//         // console.log(this);
+//         return a + b;
+//     }
+//     console.log(sum());
+// }
+
+// showThis(4, 5);
+
+
+
+
+// const obj = {
+//     a: 1,
+//     b: 2,
+//     sum: function() {
+//         // console.log(this);
+//         // function shout() {            /* undefined */
+//         //     console.log(this);
+//         // }
+//         // shout();
+//     }
+// }
+
+// obj.sum();
+
+
+
+// function User(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hello = function() {
+//         console.log('Hello!' + this.name);
+//     };
+// }
+
+// let ivan = new User('Ivan', 20);
+
+
+
+// function sayName(surname) {
+//     console.log(this);
+//     console.log(`${this.name} ${surname}`);
+// }
+
+// const user = {
+//     name: 'John'
+// };
+
+// sayName.call(user, 'Smith');
+// sayName.apply(user, ['Smith']);
+
+
+// function count(num) {
+//     return this*num;
+// }
+
+// const double = count.bind(2);
+
+// console.log(double(3));
+// console.log(double(13));
+
+
+
+// const btn = document.querySelector('button');
+
+// btn.addEventListener('click', function() {
+//     console.log(this);                           /* <button></button> */
+// });
+
+// btn.addEventListener('click', function() {
+//     this.style.backgroundColor = 'red';          /* Поменяет цвет кнопки при клике */
+// });
+
+// btn.addEventListener('click', (e) => {           /* В стрелочной функции теряется контекст вызова */
+//     e.target.style.backgroundColor = 'red';      /* Надо делоть с e.target */
+// });
+
+
+
+
+// const obj = {
+//     num: 7,
+//     sayNumber: function() {
+//         const say = () => {
+//             console.log(this);
+//         }
+//         say();
+//     }
+// }
+
+// obj.sayNumber();
+
+
+
+
+
+/* Пример короткой записи стрелочной функции */
+
+// const double = a => a * 2;
 
 
 

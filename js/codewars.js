@@ -28,22 +28,22 @@
 /* Вернуть сумму чисел из заданного массива, если пустой -- 0 */
 
 
-function sum(numbers) {
-    let result = 0;
+// function sum(numbers) {
+//     let result = 0;
 
-	numbers.forEach(num => {
-		if (numbers.length == 0) {
-			return 0;
-		} else {
-			result += num;
-		}
-	})
-    return result;
-};
+// 	numbers.forEach(num => {
+// 		if (numbers.length == 0) {
+// 			return 0;
+// 		} else {
+// 			result += num;
+// 		}
+// 	})
+//     return result;
+// };
 
-console.log(sum([1, 5.2, 4, 0, -1]));
-console.log(sum([]));
-console.log(sum([-1.398]));
+// console.log(sum([1, 5.2, 4, 0, -1]));
+// console.log(sum([]));
+// console.log(sum([-1.398]));
 
 
 
