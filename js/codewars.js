@@ -19,6 +19,38 @@
 
 
 
+
+
+
+
+
+
+/* Вернуть сумму чисел из заданного массива, если пустой -- 0 */
+
+
+function sum(numbers) {
+    let result = 0;
+
+	numbers.forEach(num => {
+		if (numbers.length == 0) {
+			return 0;
+		} else {
+			result += num;
+		}
+	})
+    return result;
+};
+
+console.log(sum([1, 5.2, 4, 0, -1]));
+console.log(sum([]));
+console.log(sum([-1.398]));
+
+
+
+
+
+
+
 // function filter_list(l) {
 
 
@@ -43,8 +75,15 @@
 
 	// let res = l.filter(num => num >= 0 && Number.isInteger(num))
 	// return res;
-// }
 
+
+/* Codewars */
+
+	// return l.filter(Number.isInteger);  /* Нет проверки на отрицательные числа */
+
+
+
+// }
 
 // console.log(filter_list([1,2,'a','b', -1]));
 // console.log(filter_list([1,'a','b',0,15]));
