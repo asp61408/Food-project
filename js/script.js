@@ -184,6 +184,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+/*  */
+
+
+
+
 
 
 
@@ -197,42 +202,257 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+// class Rectangle {
+//     constructor(height, width) {
+//         this.height = height;
+//         this.width = width;
+//     }
+
+//     calcArea() {
+//         return this.height * this.width;
+//     }
+// }
+
+// class ColorRectangleWithText extends Rectangle {
+//     constructor(height, width, text, colorBg) {
+//         super(height, width);
+//         this.text = text;
+//         this.colorBg = colorBg;
+//     }
+
+//     showMyProps() {
+//         console.log(`Текст: ${this.text}, цвет: ${this.colorBg}`);
+//     }
+// }
+
+// const div = new ColorRectangleWithText(25, 10, 'Hello World', 'red');
+
+// div.showMyProps();
+// console.log(div.calcArea());
 
 
-class Rectangle {
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
-    }
+// const sqare = new Rectangle(10, 10);
+// const long = new Rectangle(20, 100);
 
-    calcArea() {
-        return this.height * this.width;
-    }
-}
-
-class ColorRectangleWithText extends Rectangle {
-    constructor(height, width, text, colorBg) {
-        super(height, width);
-        this.text = text;
-        this.colorBg = colorBg;
-    }
-
-    showMyProps() {
-        console.log(`Текст: ${this.text}, цвет: ${this.colorBg}`);
-    }
-}
-
-const div = new ColorRectangleWithText(25, 10, 'Hello World', 'red');
-
-div.showMyProps();
-console.log(div.calcArea());
+// console.log(sqare.calcArea());
+// console.log(long.calcArea());
 
 
-const sqare = new Rectangle(10, 10);
-const long = new Rectangle(20, 100);
 
-console.log(sqare.calcArea());
-console.log(long.calcArea());
+
+
+
+
+
+
+
+
+
+
+// function Weapon(range, damage) {
+//     this.range = range;
+//     this.damage = damage;
+// }
+
+// const sword = new Weapon(20, 28);
+
+
+// Weapon.prototype.attack = function(target) {
+//     // if (target > this.range) {
+//     //     console.log('Out of range');
+//     // } else {
+//     //     target.health -= this.damage;
+//     // }
+//     console.log('attack')
+//     this.attack += target;
+// }
+
+// // console.log(sword.health)
+// console.log(sword)
+// console.log(sword.attack(10))
+
+
+// const Person1 = function() {};
+
+// Person1.speak = function() {
+//     console.log('im Alive');
+// }
+
+// Person1.speak();
+
+// const john1 = new Person1();
+
+// john1.speak()
+
+// console.log(john1)
+
+
+// const Person = class P {
+//     constructor() {
+//         this.speak = function() {
+//             console.log('im alive');
+//         }
+//     }
+// }
+
+// const john = new Person();
+
+// john.speak();
+// console.log(john.speak())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !!! Prototype */
+
+
+
+
+// function Person(first, last, age, gender, interests) {
+//     this.name = {
+//         'first': first,
+//         'last': last
+//     };
+//     this.age = age;
+//     this.gender = gender;
+//     this.interests = interests;
+//     this.bio = function () {
+//         // First define a string, and make it equal to the part of
+//         // the bio that we know will always be the same.
+//         var string = this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ';
+//         // define a variable that will contain the pronoun part of
+//         // the second sentence
+//         var pronoun;
+
+//         // check what the value of gender is, and set pronoun
+//         // to an appropriate value in each case
+//         if (this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
+//             pronoun = 'He likes ';
+//         } else if (this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
+//             pronoun = 'She likes ';
+//         } else {
+//             pronoun = 'They like ';
+//         }
+
+//         // add the pronoun string on to the end of the main string
+//         string += pronoun;
+
+//         // use another conditional to structure the last part of the
+//         // second sentence depending on whether the number of interests
+//         // is 1, 2, or 3
+//         if (this.interests.length === 1) {
+//             string += this.interests[0] + '.';
+//         } else if (this.interests.length === 2) {
+//             string += this.interests[0] + ' and ' + this.interests[1] + '.';
+//         } else {
+//             // if there are more than 2 interests, we loop through them
+//             // all, adding each one to the main string followed by a comma,
+//             // except for the last one, which needs an and & a full stop
+//             for (var i = 0; i < this.interests.length; i++) {
+//                 if (i === this.interests.length - 1) {
+//                     string += 'and ' + this.interests[i] + '.';
+//                 } else {
+//                     string += this.interests[i] + ', ';
+//                 }
+//             }
+//         }
+
+//         // finally, with the string built, we alert() it
+//         console.log(string);
+//     };
+//     this.greeting = function () {
+//         console.log('Hi! I\'m ' + this.name.first + '.');
+//     };
+// };
+
+// Person.prototype.farewell = function() {
+//     console.log(this.name.first + ' has left the building. Bye for now!');
+// };
+
+
+
+
+// let person1 = new Person('Tammi', 'Smith', 32, 'm', ['music', 'skiing', 'kickboxing']);
+
+
+
+// console.log(person1)
+// person1.bio()
+// person1.greeting()
+
+// person1.farewell()
+
+
+
+
+// console.log(person1.valueOf())
+
+// console.log(person1.__proto__)
+// console.log(person1.__proto__.__proto__)
+
+// console.log(Object.getPrototypeOf(person1))
+// console.log(Person.prototype)
+// console.log(Object.prototype)
+
+// console.log(String.prototype)
+// console.log(Number.prototype)
+// console.log(Date.prototype)
+// console.log(Array.prototype)
+
+
+
+
+// let person2 = Object.create(person1)
+
+
+// console.log(person2)
+// person2.bio()
+// person2.greeting()
+// console.log(person2.farewell())
+
+// console.log(person2.__proto__)
+
+// console.log(person1.constructor)
+// person2.constructor
+
+
+
+// let person3 = new person1.constructor('Alex', 'Fan', 48, 'male', ['programming', 'example', 'sports'])
+
+
+// console.log(person3)
+// console.log(person3.greeting())
+// console.log(person3.bio())
+
+// console.log(person3.name.first)
+// console.log(person3.age)
+// console.log(person3.farewell())
+
+
+// console.log(person1.constructor.name)
+// console.log(person2.constructor.name)
+// console.log(person3.constructor.name)
+
+
+// console.log(person1 instanceof Person)
+// console.log(person2 instanceof Person)
+// console.log(person3 instanceof Person)
+
+
+
+
+
 
 
 
